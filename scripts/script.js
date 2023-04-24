@@ -9,28 +9,22 @@ const getProducts = async (filter) => {
   printProducts.innerHTML='';
   data.forEach(item=>{
       printProducts.innerHTML+=`
-          <div class="card col-md-4">
-            <img src="${item.image}" class="card-img-top" alt="...">
+          <div class="col-3">
+            <img src="${item.image}" class="card-img-top" alt="${item.name}">
             <div class="card-body">
               <p class="title">${item.name}</p>
               <p class="price">
-                <span class="green">${item.desc}</span>
+                <span>${item.discount}</span>
                 <span><del>${item.price}</del></span>
               </p>
               <button type="button" class="btn mb-3" onClick="addFavorites(${item.id})">   
                   <span></span>
                   <div>
-                      <img class="circle" src="./images/icons/favorito.svg" alt="plus">
+                    <span class="material-icons-outlined">favorite_border</span>
                   </div>
               </button>
               <button type="button" class="button-add" onclick="addCart(${item.id})">
-                <span>
-                  Add
-                </span>
-                <div>
-                  <img class="circle" src="./images/icons/add.svg" alt="plus">
-                </div>
-                
+                <span class="material-icons-outlined">add</span>Add
               </button>
             </div>
           </div>
@@ -44,48 +38,10 @@ const filterProducts=(category)=>{
 
 //2. Añadir productos a favoritos
 
-const addFavorites= async (id)=>{
-  try{
-      const data={
-          productsId: id
-      }
-      const response = await fetch(`http://localhost:3000/favorites`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-      });
-      alert("producto guardado en favoritos")  
-  }catch (error) {
-      alert("No se pudo guardar")
-  }
-}
-
-//3. Añadir productos al carrito
-
-const addCart = async(productId)=>{
-  const response = await fetch(`http://localhost:3000/products/${productId}`)
-  const product = await response.json();
-  const prevProducts= JSON.parse(localStorage.getItem('shopping')) || []
-  const indexProduct = prevProducts.findIndex(el=> el.id===productId)
-  if(indexProduct>-1){
-      product.cant=prevProducts[indexProduct].cant+1;
-      prevProducts.splice(indexProduct,1,product)
-  } else{
-      product.cant=1
-      prevProducts.push(product)
-  }
-
-  localStorage.setItem('shopping',JSON.stringify(prevProducts))
-  alert("Agregado a carrito")
-  fillCart()
-}   
-
-//4. Escuchar el evento click que lleva a la página de favoritos
+//3. Escuchar el evento click que lleva a la página de favoritos
 
 document.addEventListener("click", (event) => {
-  console.log("Hice click en ", event.target);
+  console.log("Hice click en favoritos", event.target);
   if (event.target.classList.contains('image')) {
       console.log("Hice click aquí");
       console.log(event.target);
@@ -97,6 +53,8 @@ document.addEventListener("click", (event) => {
     window.location.href = "./pages/favorites.html";
   }
 });
+
+// 4. Añadir productos al carrito
 
 // 5. Búsqueda de producto por nombre
 
@@ -115,7 +73,7 @@ const filterByName = (termSearch = "", productList) => {
 };
 
 // 6. Capturamos el input de búsqueda y escuchamos el evento submit 
-const formSearch = document.querySelector(".header__containerSearch");
+const formSearch = document.querySelector(".search-bar");
 
 formSearch.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -123,7 +81,7 @@ formSearch.addEventListener("submit", (event) => {
   const searchTerm = inputSearch.value;
 
   if (searchTerm) {
-    const searchResult = filterByTitle(searchTerm, arrayProduct);
+    const searchResult = filterByTitle(searchTerm);
     printVideos(containerProducts, searchResult.resultSearch);
 
     if (searchResult.messageSearch) {

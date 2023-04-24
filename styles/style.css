@@ -181,41 +181,18 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 10px;
+    gap: 5px;
+    border: 1px solid;
 }
 
-/* .main__products {
+.main_cards img{
+    height: 50%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0 20px;
-    margin: 0 20px;
-} */
-
-/* .products {
-    display: flex;
-    width: 303px;
-    height: 290px;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    object-fit:contain;
+    padding: 10px;
 }
-
-.products:hover {
-    cursor: pointer;
-} */
-
-/* .products__figure {
-    width: 303px;
-    height: 170px;
-}
-
-.products__figure img {
-    width: 303px;
-    height: 170px;
-    object-fit: cover;
-} */
-
 
 
 /* footer styles */
