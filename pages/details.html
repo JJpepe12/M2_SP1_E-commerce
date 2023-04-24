@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/details.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+    <title>Detalles</title>
+  </head>
+  
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <figure class="header__figure">
+          <img
+            class="header__image"
+            src="../assets/VideoTube.png"
+            alt="Logo VideoTube"
+          />
+        </figure>
+        <h1>VideoTube</h1>
+        <form class="search-bar">
+          <input type="text" placeholder="Buscar video" name="" id="" />
+          <div class="actions">
+            <button type="submit">
+              <span class="material-icons">search</span>
+            </button>
+          </div>
+        </form>
+        <ul class="header__list">
+          <li><a href="./pages/formVideos.html">Añadir nuevo video</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="main">
+      <h1 id="title">Página de detalles</h1>
+      <article id="information"></article>
+    </main>
+    <script src="../scripts/details.js" type="module"></script>
+  </body>
+</html>

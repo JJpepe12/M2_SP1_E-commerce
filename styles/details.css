@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #181818;
+    margin: 0px 40px 16px 40px;
+    padding: 0 50px;
+    font-family: 'Open Sans';
+}
+
+.header__nav{
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__figure img {
+    width: auto;
+    height: 60px;
+    margin-top: 15%;
+}
+
+.header__figure:hover {
+    cursor: pointer;
+}
+
+.header h1 {
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 39px;
+    color: #ffffff;
+    margin-right: 50px;
+}
+
+.header__list{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.header__list li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header__list li a:hover{
+    font-weight: 800;
+}
+
+.footer{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    margin-right: 80px;
+}
+
+.search-bar input{
+    background: #181818;
+    border: 1px solid #6f6f6f;
+    border-radius: 10px 0px 0px 10px;
+    width: 60%;
+    height: 48px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #a3a3a3;
+    padding: 15px;
+}
+
+.search-bar .actions{
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar .actions button{
+    width: 88px;
+    height: 48px;
+    color: #aaa;
+    background: #373737;
+    border: 1px hidden #6f6f6f;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+}
+
+.search-bar .actions button:hover{
+    color: #ffffff;
+    text-decoration-color: #aaa;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 25px;
+}
+
+.main__botones{
+    display: flex;
+    gap: 30px;
+}
+
+.main__botones button{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    padding: 8px 16px;
+    background: #373737;
+    border: 1px solid #6f6f6f;
+    border-radius: 44px;
+    cursor: pointer;
+}
+
+.main__botones button:hover{
+    background-color: white;
+    color: black;
+}
+
+
+
+.main{
+    width: 100%;
+}
+
+.main h1{
+    color: white;
+}
+    
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+    .header__section {
+        padding-right: 40px;
+    }
+  
+    .header__nav {
+        white-space: nowrap;
+        overflow-x: hidden;
+        gap: 0 30px;
+        width: 100%;
+        padding-right: 10px;
+    }
+  
+    .header__containerSearch {
+        display: none;
+    }
+  
+    main {
+        padding-top: 193px;
+    }
+  
+    .main__videos {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
