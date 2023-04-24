@@ -42,6 +42,7 @@ const filterProducts=(category)=>{
   getProducts('category='+category)
 }
 
+//2. Añadir productos a favoritos
 
 const addFavorites= async (id)=>{
   try{
@@ -61,6 +62,7 @@ const addFavorites= async (id)=>{
   }
 }
 
+//3. Añadir productos al carrito
 
 const addCart = async(productId)=>{
   const response = await fetch(`http://localhost:3000/products/${productId}`)
@@ -80,8 +82,6 @@ const addCart = async(productId)=>{
   fillCart()
 }   
 
-
-
 //4. Escuchar el evento click que lleva a la página de favoritos
 
 document.addEventListener("click", (event) => {
@@ -98,7 +98,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// 6. Búsqueda de producto por nombre
+// 5. Búsqueda de producto por nombre
 
 const filterByName = (termSearch = "", productList) => {
   const productsFiltered = productList.filter((product) =>
@@ -114,7 +114,7 @@ const filterByName = (termSearch = "", productList) => {
   };
 };
 
-// 7. Capturamos el input de búsqueda y escuchamos el evento submit 
+// 6. Capturamos el input de búsqueda y escuchamos el evento submit 
 const formSearch = document.querySelector(".header__containerSearch");
 
 formSearch.addEventListener("submit", (event) => {
