@@ -82,64 +82,31 @@ const addCart = async(productId)=>{
 
 
 
-//4. Escuchar el evento click que lleva a la página de detalles y reproduce el video. 
+//4. Escuchar el evento click que lleva a la página de favoritos
 
 document.addEventListener("click", (event) => {
   console.log("Hice click en ", event.target);
-  if (event.target.classList.contains('videos__thumbnail')) {
+  if (event.target.classList.contains('image')) {
       console.log("Hice click aquí");
       console.log(event.target);
-      const dataCardAttribute = event.target.getAttribute('data-video');
+      const dataCardAttribute = event.target.getAttribute('name');
       console.log(dataCardAttribute);
   
     const id = event.target.getAttribute("name");
-    sessionStorage.setItem("idvideo", JSON.stringify(id));
-    window.location.href = "./pages/details.html";
+    sessionStorage.setItem("idproduct", JSON.stringify(id));
+    window.location.href = "./pages/favorites.html";
   }
 });
 
-// 5. Escuchar evento click para filtrar 
+// 6. Búsqueda de producto por nombre
 
-let category = {};
-document.addEventListener("click", (event) => {
-  switch (event.target.id) {
-    case "category__Todos":
-      category = arrayVideos;
-      printVideos(containerVideos, category);
-      break;
-    case "category__Música":
-      category = arrayVideos.filter(
-        (video) => video.seeIn.category === "Música"
-      );
-      printVideos(containerVideos, category);
-
-      break;
-    case "category__Programación":
-      category = arrayVideos.filter(
-        (video) => video.seeIn.category === "Programación"
-      );
-      printVideos(containerVideos, category);
-      break;
-    case "category__Antropología":
-      category = arrayVideos.filter(
-        (video) => video.seeIn.category === "Antropología"
-      );
-      printVideos(containerVideos, category);
-      break;
-
-  }
-});
-
-
-// 6. Búsqueda de videos por título.
-
-const filterByTitle = (termSearch = "", videosList) => {
-  const videosFiltered = videosList.filter((video) =>
-    video.seeIn.title.toLowerCase().includes(termSearch.toLowerCase())
+const filterByName = (termSearch = "", productList) => {
+  const productsFiltered = productList.filter((product) =>
+    product.name.toLowerCase().includes(termSearch.toLowerCase())
   );
-  const result = videosFiltered.length ? videosFiltered : videosList;
+  const result = productsFiltered.length ? productFiltered : productList;
 
-  const messageResult = videosFiltered.length ? false : "Este video no existe.";
+  const messageResult = productFiltered.length ? false : "Este producto no existe.";
 
   return {
     resultSearch: result,
@@ -147,7 +114,7 @@ const filterByTitle = (termSearch = "", videosList) => {
   };
 };
 
-// 7. Capturamos el form y luego escuchamos el evento submit 
+// 7. Capturamos el input de búsqueda y escuchamos el evento submit 
 const formSearch = document.querySelector(".header__containerSearch");
 
 formSearch.addEventListener("submit", (event) => {
@@ -156,13 +123,13 @@ formSearch.addEventListener("submit", (event) => {
   const searchTerm = inputSearch.value;
 
   if (searchTerm) {
-    const searchResult = filterByTitle(searchTerm, arrayVideos);
-    printVideos(containerVideos, searchResult.resultSearch);
+    const searchResult = filterByTitle(searchTerm, arrayProduct);
+    printVideos(containerProducts, searchResult.resultSearch);
 
     if (searchResult.messageSearch) {
       Swal.fire("Oops!", searchResult.messageSearch, "error");
     }
   } else {
-    Swal.fire("Oops!", "No has ingresado un video para buscar.", "error");
+    Swal.fire("Oops!", "No has ingresado un producto para buscar.", "error");
   }
 });
