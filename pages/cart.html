@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
     
     <!-- archivos css -->
-    <link rel="stylesheet" href="./styles/style.css" />  
+    <link rel="stylesheet" href="../styles/cart.css" />  
   </head>
     
   <body> 
@@ -26,7 +26,7 @@
         </h2>
       </div>
       <div class="col-2">
-        <img src="./assets/united-states.png" alt="english icon">
+        <img src="../assets/united-states.png" alt="english icon">
         <button class="btn dropdown-toggle" type="button">
           English
         </button>
@@ -38,7 +38,7 @@
 
     <nav class="container-fluid sticky-top header__nav">
       <figure class="header__figure">
-        <img src="./Assets/logo.png" alt="Logo fastkart"/>
+        <img src="../Assets/logo.png" alt="Logo fastkart"/>
       </figure>
       <span class="material-icons-outlined">location_on</span>
       <form class="search-bar">
@@ -50,8 +50,12 @@
         </div>
       </form>
       <span class="material-icons-outlined">call</span>
-      <span class="material-icons-outlined">favorite_border</span>
-      <span class="material-icons-outlined">shopping_cart</span>
+      <a href="../pages/favorites.html" class="btn p-0 position-relative header-wishlist">
+        <span class="material-icons-outlined">favorite_border</span>
+      </a>
+      <a href="../pages/cart.html" class="btn p-0 position-relative header-wishlist">
+        <span class="material-icons-outlined">shopping_cart</span>
+      </a>
       <span class="material-icons-outlined">person</span>
     </nav>
 
@@ -73,127 +77,21 @@
         <span>Deal Today</span>
     </button>
     </article>
-
-    <section class="container-fluid banner">
-      <img class="img-fluid banner__item-1" src="./assets/banner/1.jpg" alt="Comida"/>
-      <img class="img-fluid banner__item-2" src="./assets/banner/2.jpg" alt="Comida"/>
-      <img class="img-fluid banner__item-3" src="./assets/banner/3.jpg" alt="Comida"/>
-      <img class="img-fluid banner__item-4" src="./assets/banner/4.jpg" alt="Comida"/>
-      <img class="img-fluid banner__item-5" src="./assets/banner/5.jpg" alt="Comida"/>
-      <img class="img-fluid banner__item-6" src="./assets/banner/6.jpg" alt="Comida"/>
-    </section>
     </header>
 
-    <main class="container-fluid main">
-      <section id="productos" class="container-fluid row w-100">
-          <div class="col-3 bg-light p-5">
-            <h5>Categories</h5>
-            <div class="w-100 d-flex">                        
-              <hr class="w-25 separador" />
-            </div>
-
-            <nav class="nav flex-column">
-              <li class="d-flex">
-                <img src="./Assets/icons/vegetable.svg" alt="Vegetables and fruits">
-                <a class="nav-link" href="#">Vegetables and fruits</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/cup.svg" alt="Beverages">
-                <a class="nav-link" href="#">Beverages</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/meats.svg" alt="Meats and Seafood">
-                <a class="nav-link" href="#">Meats and Seafood</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/breakfast.svg" alt="Breakfast">
-                <a class="nav-link" href="#">Breakfast</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/frozen.svg" alt="Frozen Foods">
-                <a class="nav-link" href="#">Frozen Foods</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/biscuit.svg" alt="Biscuits and Snacks">
-                <a class="nav-link" href="#">Biscuits and Snacks</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/grocery.svg" alt="Grocery">
-                <a class="nav-link" href="#">Grocery and Staples</a>
-              </li>
-              <li class="d-flex">
-                <img src="./Assets/icons/drink.svg" alt="Wines and Alcohol drinks">
-                <a class="nav-link" href="#">Wines and Alcohol drinks</a>
-              </li>
-            </nav>
-          </div>
-          
-          <div class="col-9 bg-danger main_cards">
-            <div>Pintar cards aqui</div>
-          </div>
-          <!-- <div class="col-12 px-0">
-            <div class="product-box">
-                <div class="product-image">
-                    <a href="product-left-thumbnail.html" tabindex="0">
-                        <img src="https://themes.pixelstrap.com/fastkart/assets/images/vegetable/product/1.png" class="img-fluid blur-up lazyloaded" alt="Crunchy choco chip">
-                    </a>
-                    <ul class="product-option">
-                        <li" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Wishlist">
-                            <a href="wishlist.html" class="notifi-wishlist" tabindex="0"></a>
-                            <span class="material-icons-outlined">favorite_border</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="product-detail">
-                    <a href="product-left-thumbnail.html" tabindex="0">
-                        <h6 class="name" style="min-height: 0px; max-height: none; height: 44px;">Fantasy Crunchy Choco Chip Cookies</h6>
-                    </a>
-
-                    <h5 class="sold text-content">
-                        <span class="theme-color price">$26.69</span>
-                        <del>28.56</del>
-                    </h5>
-
-                    <div class="product-rating mt-sm-2 mt-1">
-                      <span class="material-icons-outlined">star_border</span>
-                      <span class="material-icons-outlined">star_border</span>
-                      <span class="material-icons-outlined">star_border</span>
-                      <span class="material-icons-outlined">star_border</span>
-                      <span class="material-icons-outlined">star_border</span>
-                      <h6 class="theme-color">In Stock</h6>
-                    </div>
-
-                    <div class="add-to-cart-box">
-                        <button class="btn btn-add-cart addcart-button" tabindex="0">Add
-                            <span class="add-icon">
-                                <i class="fa-solid fa-plus"></i>
-                            </span>
-                        </button>
-                        <div class="cart_qty qty-box">
-                            <div class="input-group">
-                                <button type="button" class="qty-left-minus" data-type="minus" data-field="" tabindex="0">
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </button>
-                                <input class="form-control input-number qty-input" type="text" name="quantity" value="0" tabindex="0">
-                                <button type="button" class="qty-right-plus" data-type="plus" data-field="" tabindex="0">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <main class="container-fluid bg-light main">
+      <section class="container-fluid row w-100">
+        <div class="col-3 p-5">
+          <h5>Shopping cart</h5>
         </div>
-          
-        </div>
-      </section> -->
+        <div class="col-9 d-flex">Pintar productos comprados aquí</div>
     </main> <br>
 
     <footer class="container-fluid bg-light footer">
     <section class="row w-100 main__footer">
       <article class="col-3 main__footer-logo">
         <div>
-          <img src="./assets/logo.png" alt="fastkart logo">
+          <img src="../assets/logo.png" alt="fastkart logo">
           <p>We are a friendly bar serving a variety of cocktails, wines and beers. Our bar is a perfect place for a couple.</p>
         </div>
         <li">
@@ -252,15 +150,15 @@
         <li">
         
         <h5>Download App:</h5>
-        <img src="./assets/footer/playstore.svg" alt="playstore logo">
-        <img src="./assets/footer/appstore.svg" alt="appstore logo">
+        <img src="../assets/footer/playstore.svg" alt="playstore logo">
+        <img src="../assets/footer/appstore.svg" alt="appstore logo">
         </li>
       </article>
     </section> <br>
 
   <section class="row w-100 align-middle bottom">
     <h6 class="col-4 bottom__text">© 2023 - José Sanmiguel - E-commerce</h6>
-    <img class="col-4 bottom__payment" src="./assets/footer/payment.png" alt="payment methods">
+    <img class="col-4 bottom__payment" src="../assets/footer/payment.png" alt="payment methods">
     <li" class="col-4 bottom__payment-redes"> Stay connected:
       <img src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="facebook logo">
       <img src="https://www.svgrepo.com/show/513008/twitter-154.svg" alt="twitter logo">
@@ -272,6 +170,6 @@
 
   <!-- archivos javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./scripts/script.js" type="module"></script>
+    <script src="../scripts/cart.js" type="module"></script>
   </body>
 </html>
